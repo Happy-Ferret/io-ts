@@ -41,7 +41,7 @@
     "ts-node": "3.2.0",
     "tslint": "4.4.2",
     "tslint-config-standard": "4.0.0",
-    "typescript": "^2.7.2",
+    "typescript": "^2.8.0-dev.20180224",
     "typings-checker": "1.1.2"
   },
   "tags": [
