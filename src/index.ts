@@ -526,13 +526,11 @@ export type RequiredKeys<T> = { [P in keyof T]: T[P] extends OptionalType<any> ?
 
 export type OptionalKeys<T> = { [P in keyof T]: T[P] extends OptionalType<any> ? P : never }[keyof T]
 
-export type TypeOfProps<P extends AnyProps> = OptionalType<any> extends P[keyof P]
-  ? { [K in RequiredKeys<P>]: TypeOf<P[K]> } & { [K in OptionalKeys<P>]?: TypeOf<P[K]> }
-  : { [K in keyof P]: TypeOf<P[K]> }
+export type TypeOfProps<P extends AnyProps> = { [K in RequiredKeys<P>]: TypeOf<P[K]> } &
+  { [K in OptionalKeys<P>]?: TypeOf<P[K]> }
 
-export type OutputOfProps<P extends AnyProps> = OptionalType<any> extends P[keyof P]
-  ? { [K in RequiredKeys<P>]: OutputOf<P[K]> } & { [K in OptionalKeys<P>]?: OutputOf<P[K]> }
-  : { [K in keyof P]: OutputOf<P[K]> }
+export type OutputOfProps<P extends AnyProps> = { [K in RequiredKeys<P>]: OutputOf<P[K]> } &
+  { [K in OptionalKeys<P>]?: OutputOf<P[K]> }
 
 export interface Props {
   [key: string]: Mixed

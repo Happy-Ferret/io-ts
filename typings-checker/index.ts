@@ -377,7 +377,7 @@ const OC1 = t.type({
   b: t.optional(t.number)
 })
 
-// $ExpectError Type '{ a: string; b: string; }' is not assignable to type '{ a: string; } & { b?: number | undefined; }'
+// $ExpectError Type '{ a: string; b: string; }' is not assignable to type 'TypeOfProps<{ a: StringType; b: OptionalType<NumberType, number | undefined, number | undefined, ...'
 const x39: TypeOf<typeof OC1> = { a: 'a', b: 'b' }
 const x40: TypeOf<typeof OC1> = { a: 'a' }
 const x41: TypeOf<typeof OC1> = { a: 'a', b: 1 }
